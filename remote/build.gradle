@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 
 
@@ -6,7 +6,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-
+        applicationId "com.ekassir.maloshtanas.remote"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1

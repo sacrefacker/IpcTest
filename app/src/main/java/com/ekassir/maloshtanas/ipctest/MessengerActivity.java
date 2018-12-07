@@ -16,7 +16,6 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.ekassir.maloshtanas.commonlibrary.Constants;
-import com.ekassir.maloshtanas.remote.MessengerService;
 
 /**
  * Example of binding and unbinding to the remote service.
@@ -58,8 +57,9 @@ public class MessengerActivity extends Activity
         // Establish a connection with the service.  We use an explicit
         // class name because there is no reason to be able to let other
         // applications replace our component.
-        bindService(new Intent(MessengerActivity.this, MessengerService.class), mConnection, Context.BIND_AUTO_CREATE);
-//        bindService(new Intent().setClassName("com.ekassir.maloshtanas.remote", "com.ekassir.maloshtanas.remote.MessengerService"));
+//        bindService(new Intent(MessengerActivity.this, MessengerService.class), mConnection, Context.BIND_AUTO_CREATE);
+        Intent serviceIntent = new Intent().setClassName("com.ekassir.maloshtanas.remote", "com.ekassir.maloshtanas.remote.MessengerService");
+        bindService(serviceIntent, mConnection, Context.BIND_AUTO_CREATE);
         mIsBound = true;
         mCallbackText.setText("Binding.");
     }
