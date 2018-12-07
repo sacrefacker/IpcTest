@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">IpcTest</string>
+
+    <string name="remote_service_connected">Connected to remote service</string>
+    <string name="remote_service_disconnected">Disconnected from remote service</string>
+
+</resources>
