@@ -124,14 +124,12 @@ public class MessengerActivity extends Activity
             // We want to monitor the service for as long as we are
             // connected to it.
             try {
-                Message msg = Message.obtain(null,
-                        Constants.MSG_REGISTER_CLIENT);
+                Message msg = Message.obtain(null, Constants.MSG_REGISTER_CLIENT);
                 msg.replyTo = mMessenger;
                 mService.send(msg);
 
                 // Give it some value as an example.
-                msg = Message.obtain(null,
-                        Constants.MSG_SET_VALUE, this.hashCode(), 0);
+                msg = Message.obtain(null, Constants.MSG_SET_VALUE, this.hashCode(), 0);
                 mService.send(msg);
             }
             catch (RemoteException e) {
